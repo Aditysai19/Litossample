@@ -1,1 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Home - LITOS - Rekindle your mind</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFF9F0;
+            color: #2C2418;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2F241B;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 20px;
+        }
+
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #E6B17E, #C47D4A, #E6B17E);
+            border-radius: 4px;
+        }
+
+        .section-header p {
+            color: #8B7355;
+            font-size: 1.15rem;
+            margin-top: 32px;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #E6B17E 0%, #C47D4A 100%);
+            color: #FFF9F0;
+            font-weight: 700;
+            padding: 14px 38px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 20px rgba(196, 125, 74, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(196, 125, 74, 0.4);
+            background: linear-gradient(135deg, #DBA16C 0%, #B56A3A 100%);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid #E6B17E;
+            color: #C47D4A;
+            font-weight: 600;
+            padding: 12px 34px;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-outline:hover {
+            background: #E6B17E;
+            color: #FFF9F0;
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        .navbar {
+            padding: 24px 0;
+            background: rgba(255, 249, 240, 0.96);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #F0E4D4;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2F241B;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #C47D4A;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 42px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #5E4A34;
+            transition: 0.25s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: #C47D4A;
+        }
+
+        @media (max-width: 768px) {
+            .nav-flex {
+                flex-direction: column;
+                gap: 16px;
+            }
+            .nav-links {
+                gap: 28px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Hero Section - Color Dominant */
+        .hero {
+            padding: 80px 0 100px;
+            background: linear-gradient(135deg, #FFF9F0 0%, #FEEBD8 50%, #FFE4CE 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(230, 177, 126, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(196, 125, 74, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-content .welcome-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #E6B17E, #C47D4A);
+            padding: 8px 24px;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #FFF9F0;
+            margin-bottom: 28px;
+            box-shadow: 0 4px 12px rgba(196, 125, 74, 0.3);
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            line-height: 1.2;
+            margin-bottom: 28px;
+            color: #2F241B;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #6B543C;
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            flex: 0.8;
+            background: linear-gradient(145deg, #F6E4D2, #F0DCC6);
+            border-radius: 50px;
+            height: 440px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 45px -20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-visual:before {
+            content: '🧘';
+            font-size: 8rem;
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .hero-visual:after {
+            content: '';
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            border: 3px solid rgba(196, 125, 74, 0.4);
+            border-radius: 50%;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
+        @media (max-width: 968px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero-grid { flex-direction: column; }
+            .hero-content p { max-width: 100%; }
+            .hero-visual { width: 100%; height: 320px; }
+        }
+
+        /* Mission Vision Cards - Warm & Inviting */
+        .mission-vision {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #FFFFFF, #FFFBF5);
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+        }
+
+        .mv-card {
+            background: linear-gradient(145deg, #FFFFFF, #FFFCF8);
+            padding: 52px 44px;
+            border-radius: 40px;
+            transition: all 0.4s ease;
+            border: 1px solid #F2E4D4;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
+        }
+
+        .mv-card:hover {
+            transform: translateY(-8px);
+            border-color: #E6B17E;
+            box-shadow: 0 25px 45px -15px rgba(196, 125, 74, 0.2);
+        }
+
+        .mv-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FEF0E4, #FCE6D4);
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .mv-icon i {
+            font-size: 2.2rem;
+            color: #C47D4A;
+        }
+
+        .mv-card h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2F241B;
+            font-weight: 700;
+        }
+
+        .mv-card p {
+            color: #6B543C;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .mv-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .mv-card {
+                padding: 40px 32px;
+            }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #FFF9F0, #FFF5EA);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            padding: 44px 32px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid #F2E4D4;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.02);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: #E6B17E;
+            box-shadow: 0 30px 45px -15px rgba(196, 125, 74, 0.25);
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #FEF0E4, #FCE6D4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+        }
+
+        .service-icon i {
+            font-size: 2.5rem;
+            color: #C47D4A;
+        }
+
+        .service-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 16px;
+            color: #2F241B;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #6B543C;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #FEF0E4, #FCEADB);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .testimonial-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            padding: 44px;
+            transition: all 0.3s ease;
+            border: 1px solid #F2E4D4;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 40px -12px rgba(196, 125, 74, 0.2);
+            border-color: #E6B17E;
+        }
+
+        .quote-icon {
+            color: #E6B17E;
+            font-size: 2.2rem;
+            opacity: 0.5;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #4A3828;
+            margin-bottom: 28px;
+        }
+
+        .client-name {
+            font-weight: 800;
+            color: #C47D4A;
+            font-size: 1rem;
+        }
+
+        /* Blog Section with Feature Images */
+        .blog {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #FFF9F0, #FFF5EA);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background: #FFFFFF;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+            border: 1px solid #F2E4D4;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 45px -15px rgba(196, 125, 74, 0.3);
+            border-color: #E6B17E;
+        }
+
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.4));
+            padding: 20px;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: linear-gradient(135deg, #E6B17E, #C47D4A);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+        }
+
+        .blog-content {
+            padding: 28px 28px 32px;
+        }
+
+        .blog-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2F241B;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .blog-link {
+            color: #C47D4A;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            transition: gap 0.3s;
+        }
+
+        .blog-link:hover {
+            gap: 12px;
+            color: #B56A3A;
+        }
+
+        /* Clients Section */
+        .clients {
+            padding: 90px 0;
+            background: linear-gradient(135deg, #FEF0E4, #FCEADB);
+            text-align: center;
+        }
+
+        .clients-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 55px;
+            flex-wrap: wrap;
+            margin-top: 55px;
+        }
+
+        .client-icon {
+            font-size: 3rem;
+            color: #C47D4A;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        .client-icon:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            color: #E6B17E;
+        }
+
+        /* Outcomes Section */
+        .outcomes {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #2F241B, #1F1812);
+            color: #FFF9F0;
+        }
+
+        .outcomes .section-header h2 {
+            color: #FFF9F0;
+        }
+
+        .outcomes .section-header h2:after {
+            background: linear-gradient(90deg, #E6B17E, #C47D4A, #E6B17E);
+        }
+
+        .metrics-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 45px;
+            margin: 65px 0 75px;
+        }
+
+        .metric {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            color: #E6B17E;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #D4C2AE;
+        }
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 35px;
+            margin-top: 45px;
+        }
+
+        .outcome-card {
+            background: rgba(255, 249, 240, 0.08);
+            border-radius: 28px;
+            padding: 40px 32px;
+            transition: 0.3s;
+            border: 1px solid rgba(230, 177, 126, 0.25);
+        }
+
+        .outcome-card:hover {
+            background: rgba(255, 249, 240, 0.12);
+            border-color: rgba(230, 177, 126, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .outcome-card i {
+            font-size: 2.2rem;
+            color: #E6B17E;
+            margin-bottom: 22px;
+        }
+
+        .outcome-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .outcome-card p {
+            font-size: 0.95rem;
+            color: #D4C2AE;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #FFF9F0, #FFF2E6);
+        }
+
+        .cta-section h3 {
+            font-size: 2.3rem;
+            font-family: 'Playfair Display', serif;
+            color: #2F241B;
+            font-weight: 700;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #1F1812;
+            color: #B8A690;
+            padding: 65px 0 45px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 35px;
+        }
+
+        .footer-links a {
+            color: #E6B17E;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+            color: #C47D4A;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: #9A866E;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #E6B17E, #C47D4A);
+            color: #FFF9F0;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 6px 18px rgba(196, 125, 74, 0.4);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: linear-gradient(135deg, #DBA16C, #B56A3A);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-flex">
+        <a href="#" class="logo">LITOS<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="welcome-badge">✦ WELCOME TO LITOS! ✦</div>
+                <h1>Driving Excellence in Every Aspect: Litos is your partner in prosperity, fostering success in every aspect of corporate life and business.</h1>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">Begin Your Journey →</a>
+                    <a href="#" class="btn-outline">Connect With Us</a>
+                </div>
+            </div>
+            <div class="hero-visual"></div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mv-grid">
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>At Litos, our mission is to empower businesses and individuals to thrive and grow by providing tailored, innovative, and holistic solutions. We offer customized high-quality business solutions that drive success, foster personal development, create a lasting impact, and promote a culture of excellence and well-being.</p>
+                </div>
+                <div class="mv-card">
+                    <div class="mv-icon"><i class="fas fa-mountain-sun"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>Guiding You to Success: Our vision is to lead businesses and individuals on a transformative journey of growth, offering a complete package of solutions that drive success and satisfaction at every turn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Services</h2>
+                <p>We deliver customized business transformation solutions for</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Coaching and Counseling</h3>
+                    <p>Coaching and counseling to empower individuals to reach their full potential personally and professionally.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3>Corporate Training</h3>
+                    <p>Customized corporate training to empower your employees with the skills and knowledge to excel.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>IT Services Consultation</h3>
+                    <p>Expert customized IT infrastructure guidance and solutions that align with your business goals.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Marketing and Business Development</h3>
+                    <p>Customized marketing and business development services to elevate your business to new heights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Clients Say</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>Very good training by Litos as it improves the skills and also adds some new skills that will help in the corporate world</p>
+                    <div class="client-name">- Nakul Khandelwal</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>Llitos has an effective techno-management leader who has helped me and our team to grow in IT domain tremendously.</p>
+                    <div class="client-name">- Reginald Christian</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>The session was very good. Litos counsellors explained each and every thing in a very easy going manner and it was very effective for our learning and corporate group counselling. With this session we got to know more about the challenges we faced everyday and how we could overcome them.</p>
+                    <div class="client-name">- Divya Singhal</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>The amount of experience and expertise Litos brings to the table for complex website issues and complexities of the data world is highly appreciable.</p>
+                    <div class="client-name">- Prakrathi Gaur</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog with Feature Images -->
+    <section class="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Blog</h2>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/20/600/400" alt="Mindfulness for Teens">
+                        <div class="blog-overlay"><span class="blog-category">Mindfulness</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>The Power of Mindfulness for Teens: A Guide to Stress-Relief Mindfulness is the practice of living in...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/26/600/400" alt="Tech Professionals">
+                        <div class="blog-overlay"><span class="blog-category">Wellness</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>In today's fast-paced world, tech professionals often find themselves trapped in the relentless...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/169/600/400" alt="Digital Detox">
+                        <div class="blog-overlay"><span class="blog-category">Digital Wellness</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Digital Detox: The Secret to a Happier, Healthier Workplace In today's fast-paced corporate world, the...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/155/600/400" alt="Student Wellness">
+                        <div class="blog-overlay"><span class="blog-category">Student Life</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Mindfulness Magic: The Ultimate Guide to Student Wellness In today's fast-paced...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/60/600/400" alt="Educators">
+                        <div class="blog-overlay"><span class="blog-category">Education</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Unlocking the Full Potential of Educators Through Mindfulness Practices The...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/88/600/400" alt="Workplace Mindfulness">
+                        <div class="blog-overlay"><span class="blog-category">Workplace</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Mindfulness at Workplace: Revolutionizing Interpersonal Skills Interpersonal skills, often referred...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/29/600/400" alt="Career Strategies">
+                        <div class="blog-overlay"><span class="blog-category">Career</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>4 Transformative Strategies to Get Noticed, and Land Your Dream Job Do you wonder why your associate...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/91/600/400" alt="Team Engagement">
+                        <div class="blog-overlay"><span class="blog-category">Leadership</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>11 Innovative Ways to Supercharge Engagement at Work and Team Energy In the...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/id/42/600/400" alt="Group Meditation">
+                        <div class="blog-overlay"><span class="blog-category">Meditation</span></div>
+                    </div>
+                    <div class="blog-content">
+                        <h4>Four Benefits of Group Meditation You Never Knew About! Have you ever felt the energy shift in a room...</h4>
+                        <a href="#" class="blog-link">Read more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Clients -->
+    <section class="clients">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Clients</h2>
+            </div>
+            <div class="clients-grid">
+                <i class="fas fa-building client-icon"></i>
+                <i class="fas fa-chart-network client-icon"></i>
+                <i class="fas fa-globe client-icon"></i>
+                <i class="fas fa-handshake client-icon"></i>
+                <i class="fas fa-industry client-icon"></i>
+                <i class="fas fa-university client-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes We Drive -->
+    <section class="outcomes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Outcomes We Drive</h2>
+            </div>
+            <div class="metrics-row">
+                <div class="metric">
+                    <div class="metric-number">85+</div>
+                    <div class="metric-label">years of combined cummulative experience</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">2800+</div>
+                    <div class="metric-label">Empowered 2800+ lives and businesses</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">255+</div>
+                    <div class="metric-label">Advised 225+ companies</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-number">25+</div>
+                    <div class="metric-label">Advised clients from 25+ countries</div>
+                </div>
+            </div>
+            <div class="outcomes-grid">
+                <div class="outcome-card">
+                    <i class="fas fa-chart-simple"></i>
+                    <h4>Strategic Business Guidance</h4>
+                    <p>We offer business consultancy services designed to enhance productivity, optimize team composition, and implement SMART goals for growth and improved efficiency.</p>
+                </div>
+                <div class="outcome-card">
+                    <i class="fas fa-brain"></i>
+                    <h4>Tailored Mindfulness Strategies</h4>
+                    <p>We offer customized mindfulness strategies that enhance focus, foster better leadership, reduce stress and anxiety, and improve work-life balance, elevating your overall well-being and effectiveness.</p>
+                </div>
+                <div class="outcome-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Skill Empowerment</h4>
+                    <p>Our personalized corporate training programs equip your team with the skills and knowledge they need to excel, fostering productivity and innovation.</p>
+                </div>
+                <div class="outcome-card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h4>Holistic Counseling Services</h4>
+                    <p>Our individualized coaching and counseling sessions empower individuals to realize their full potential, leading to self-fulfillment and career success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h3>Learn more about how to utilize your resources for optimal business transformation</h3>
+            <a href="#" class="btn-primary">Connect With Litos →</a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">Home</a> | 
+            <a href="#">About</a> | 
+            <a href="#">Services</a> | 
+            <a href="#">Blog</a> | 
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-copyright">
+            <p>Scroll to Top</p>
+            <p>&copy; 2025 LITOS - Rekindle your mind. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="#" class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script>
+    const scrollBtn = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollBtn.style.display = 'flex';
+        } else {
+            scrollBtn.style.display = 'none';
+        }
+    });
+    
+    scrollBtn.style.display = 'none';
+    
+    scrollBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
